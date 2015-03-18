@@ -22,6 +22,7 @@ var objects;
         // PUBLIC METHODS
         Plane.prototype.update = function () {
             this.y = stage.mouseY;
+            this.x = stage.mouseX;
         };
         return Plane;
     })(createjs.Bitmap);

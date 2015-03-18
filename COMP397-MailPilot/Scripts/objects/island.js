@@ -18,18 +18,19 @@ var objects;
         }
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++
         Island.prototype.update = function () {
-            this.x += this._dy;
+            this.x -= this._dy;
             this._checkBounds();
         };
         // Reset position of island to the top
         Island.prototype.reset = function () {
-            this.x = -this.width;
-            this.y = Math.floor(Math.random() * 440);
+            this.y = Math.floor(Math.random() * 480);
+            ;
+            this.x = 690;
         };
         // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++
         Island.prototype._checkBounds = function () {
             // check if island has left the bottom of the screen
-            if (this.x >= (640 + this.width)) {
+            if (this.x < 0) {
                 this.reset();
             }
         };

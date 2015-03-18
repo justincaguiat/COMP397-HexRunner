@@ -13,21 +13,21 @@
 
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++
         public update() {
-            this.x += this._dy;
+            this.x -= this._dy;
 
             this._checkBounds();
         }
 
         // Reset position of island to the top
         public reset() {
-            this.x = -this.width;
-            this.y = Math.floor(Math.random() * 440);
+            this.y = Math.floor(Math.random() * 480);;
+            this.x = 690;
         }
 
         // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++
         private _checkBounds() {
             // check if island has left the bottom of the screen
-            if (this.x >= (640 + this.width)) {
+            if (this.x <0) {
                 this.reset();
             }
         }

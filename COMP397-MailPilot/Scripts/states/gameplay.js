@@ -48,6 +48,7 @@ var states;
                             this.scoreboard.lives--;
                         }
                         if (collider.name == "island") {
+                            this.island.reset();
                             this.scoreboard.score += 100;
                         }
                     }

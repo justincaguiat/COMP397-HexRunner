@@ -64,11 +64,14 @@ module states {
             var theDistance = this.distance(planePosition, objectPosition);
             if (theDistance < ((this.plane.height * 0.5) + (collider.height * 0.5))) {
                 if (collider.isColliding != true) {
-                    createjs.Sound.play(collider.sound);
+                    createjs.Sound.play(collider.sound);  
                     if (collider.name == "cloud") {
                         this.scoreboard.lives--;
-                    }
+                        }
+
+
                     if (collider.name == "island") {
+                        this.island.reset();
                         this.scoreboard.score += 100;
                     }
                 }
@@ -89,7 +92,6 @@ module states {
 
             for (var cloud = 2; cloud >= 0; cloud--) {
                 this.clouds[cloud].update();
-
                 this.checkCollision(this.clouds[cloud]);
             }
 

@@ -17,7 +17,7 @@ var objects;
             this.x = 50;
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
-            createjs.Sound.play("engine", { loop: -1 });
+            createjs.Sound.play("gameAudio", { loop: -1 });
         }
         // PUBLIC METHODS
         Plane.prototype.update = function () {

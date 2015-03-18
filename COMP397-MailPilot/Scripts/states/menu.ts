@@ -24,10 +24,11 @@ module states {
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         constructor() {
             
-
             // Instantiate Game Container
             this.game = new createjs.Container();
 
+            //play bg music
+            createjs.Sound.play("menuAudio", { loop: -1 });
             //Ocean object
             this.ocean = new objects.Ocean();
             this.game.addChild(this.ocean);
@@ -66,20 +67,24 @@ module states {
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         public update() {
 
+            
             this.ocean.update();
 
+            //sets difficulty to hard and stops menu music 
             if (this.hard) {
                 this.game.removeAllChildren();
                 stage.removeChild(this.game);
                 constants.CLOUD_NUM = 15;
+                createjs.Sound.stop();
                 currentState = constants.PLAY_STATE;
                 stateChanged = true;
             }
-
+            //sets difficulty to easy and stops menu music
             if (this.easy) {
                 this.game.removeAllChildren();
                 stage.removeChild(this.game);
                 constants.CLOUD_NUM = 7;
+                createjs.Sound.stop();
                 currentState = constants.PLAY_STATE;
                 stateChanged = true;
             }

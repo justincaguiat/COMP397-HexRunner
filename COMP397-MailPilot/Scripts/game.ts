@@ -47,7 +47,8 @@ var manifest = [
     { id: "hardButton", src: "assets/images/hardButton.png" },
     { id: "easyButton", src: "assets/images/easyButton.png" },
     { id: "tryAgainButton", src: "assets/images/tryAgain.png" },
-    { id: "engine", src: "assets/audio/Endurance.mp3" },
+    { id: "gameAudio", src: "assets/audio/Endurance.mp3" },
+    { id: "menuAudio", src: "assets/audio/RPM.mp3" },
     { id: "yay", src: "assets/audio/yay.ogg" },
     { id: "thunder", src: "assets/audio/thunder.ogg" }
 ];

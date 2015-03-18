@@ -22,7 +22,7 @@ var states;
             //Plane object
             this.plane = new objects.Plane();
             this.game.addChild(this.plane);
-            for (var cloud = 2; cloud >= 0; cloud--) {
+            for (var cloud = constants.CLOUD_NUM; cloud >= 0; cloud--) {
                 this.clouds[cloud] = new objects.Cloud();
                 this.game.addChild(this.clouds[cloud]);
             }
@@ -63,7 +63,7 @@ var states;
             this.ocean.update();
             this.island.update();
             this.plane.update();
-            for (var cloud = 2; cloud >= 0; cloud--) {
+            for (var cloud = constants.CLOUD_NUM; cloud >= 0; cloud--) {
                 this.clouds[cloud].update();
                 this.checkCollision(this.clouds[cloud]);
             }

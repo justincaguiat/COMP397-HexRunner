@@ -11,9 +11,11 @@
 
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++
         public update() {
-            //this.y += this._dy;
+            this.y += this._dy;
             this.x -= this._dx;
-
+            this.rotation += this._dx;
+            this.scaleX = this._scale;
+            this.scaleY = this._scale;
             this._checkBounds();
         }
 
@@ -21,8 +23,9 @@
         public reset() {
             this.y = Math.floor(Math.random() * 480);;
             this.x = 690;
-            this._dy = Math.floor(Math.random() * 5) + 5;
+            this._dy = Math.floor(Math.random() * 10) - 5;
             this._dx = Math.floor(Math.random() * 5) + 5;
+            this._scale = Math.floor(Math.random() * 1.5) +1;
         }
 
         // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++

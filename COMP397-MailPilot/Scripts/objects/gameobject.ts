@@ -9,6 +9,7 @@
         public name: string;
         protected _dy: number;
         protected _dx: number;
+        protected _scale: number;
 
         // CONSTRUCTOR
         constructor(assetString: string) {

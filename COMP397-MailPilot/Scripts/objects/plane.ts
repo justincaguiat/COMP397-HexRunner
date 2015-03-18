@@ -21,6 +21,7 @@ module objects {
         public update() {
             this.y = stage.mouseY;
             this.x = stage.mouseX;
+            this.rotation += 10;
         }
 
     }

@@ -37,7 +37,7 @@ module states {
             this.game.addChild(this.plane);
 
             //Cloud object
-            for (var cloud = 2; cloud >= 0; cloud--) {
+            for (var cloud = constants.CLOUD_NUM; cloud >= 0; cloud--) {
                 this.clouds[cloud] = new objects.Cloud();
                 this.game.addChild(this.clouds[cloud]);
             }
@@ -90,7 +90,7 @@ module states {
 
             this.plane.update();
 
-            for (var cloud = 2; cloud >= 0; cloud--) {
+            for (var cloud = constants.CLOUD_NUM; cloud >= 0; cloud--) {
                 this.clouds[cloud].update();
                 this.checkCollision(this.clouds[cloud]);
             }

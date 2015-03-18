@@ -30,6 +30,9 @@ module states {
             this.ocean = new objects.Ocean();
             this.game.addChild(this.ocean);
 
+            //gameover sound
+            createjs.Sound.play("gameover");
+
             //Game Over Label
             this.gameOverLabel = new objects.Label(320, 40, "GAME OVER");
             this.gameOverLabel.font = "60px Consolas";

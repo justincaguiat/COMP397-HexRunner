@@ -49,6 +49,7 @@ var manifest = [
     { id: "tryAgainButton", src: "assets/images/tryAgain.png" },
     { id: "gameAudio", src: "assets/audio/Endurance.mp3" },
     { id: "menuAudio", src: "assets/audio/RPM.mp3" },
+    { id: "gameover", src: "assets/audio/gameover.mp3" },
     { id: "yay", src: "assets/audio/yay.ogg" },
     { id: "thunder", src: "assets/audio/thunder.ogg" }
 ];

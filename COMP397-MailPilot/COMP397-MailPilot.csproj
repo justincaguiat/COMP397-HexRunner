@@ -60,11 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\audio\gameover.mp3" />
-    <Content Include="assets\audio\engine.ogg" />
     <Content Include="assets\audio\Endurance.mp3" />
+    <Content Include="assets\audio\horn.mp3" />
+    <Content Include="assets\audio\pew.mp3" />
     <Content Include="assets\audio\RPM.mp3" />
-    <Content Include="assets\audio\thunder.ogg" />
-    <Content Include="assets\audio\yay.ogg" />
     <Content Include="assets\images\easyButton.png" />
     <Content Include="assets\images\enemy1.png" />
     <Content Include="assets\images\enemy2.png" />

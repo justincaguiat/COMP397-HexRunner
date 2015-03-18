@@ -47,7 +47,7 @@ var states;
             if (this.tryAgain) {
                 this.game.removeAllChildren();
                 stage.removeChild(this.game);
-                currentState = constants.PLAY_STATE;
+                currentState = constants.MENU_STATE;
                 stateChanged = true;
             }
             stage.update(); // Refreshes our stage

@@ -35,8 +35,9 @@ var manifest = [
     { id: "island", src: "assets/images/points.png" },
     { id: "ocean", src: "assets/images/ground.png" },
     { id: "plane", src: "assets/images/hexagon.png" },
-    { id: "playButton", src: "assets/images/playButton.png" },
-    { id: "tryAgainButton", src: "assets/images/tryAgainButton.png" },
+    { id: "hardButton", src: "assets/images/hardButton.png" },
+    { id: "easyButton", src: "assets/images/easyButton.png" },
+    { id: "tryAgainButton", src: "assets/images/tryAgain.png" },
     { id: "engine", src: "assets/audio/Endurance.mp3" },
     { id: "yay", src: "assets/audio/yay.ogg" },
     { id: "thunder", src: "assets/audio/thunder.ogg" }

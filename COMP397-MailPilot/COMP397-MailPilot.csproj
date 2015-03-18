@@ -63,13 +63,14 @@
     <Content Include="assets\audio\Endurance.mp3" />
     <Content Include="assets\audio\thunder.ogg" />
     <Content Include="assets\audio\yay.ogg" />
+    <Content Include="assets\images\easyButton.png" />
     <Content Include="assets\images\enemy1.png" />
     <Content Include="assets\images\enemy2.png" />
     <Content Include="assets\images\ground.png" />
+    <Content Include="assets\images\hardButton.png" />
     <Content Include="assets\images\hexagon.png" />
-    <Content Include="assets\images\playButton.png" />
     <Content Include="assets\images\points.png" />
-    <Content Include="assets\images\tryAgainButton.png" />
+    <Content Include="assets\images\tryAgain.png" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

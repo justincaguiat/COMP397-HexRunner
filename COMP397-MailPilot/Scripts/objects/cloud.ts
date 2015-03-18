@@ -17,6 +17,7 @@
             this.scaleX = this._scale;
             this.scaleY = this._scale;
             this._checkBounds();
+
         }
 
         // Reset position of island to the top
@@ -25,7 +26,7 @@
             this.x = 690;
             this._dy = Math.floor(Math.random() * 10) - 5;
             this._dx = Math.floor(Math.random() * 5) + 5;
-            this._scale = Math.floor(Math.random() * 1.5) +1;
+            this._scale =(Math.random() * 1.3) +1;
         }
 
         // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++

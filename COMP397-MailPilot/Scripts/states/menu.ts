@@ -15,7 +15,9 @@ module states {
         // Game Objects 
         public game: createjs.Container;
         public ocean: objects.Ocean;
-        public mailPilotLabel: objects.Label;
+        public titleLabel: objects.Label;
+        public instLabel: objects.Label;
+        public chooseLabel: objects.Label;
         public easyButton: objects.Button;
         public hardButton: objects.Button;
         public easy: boolean = false;
@@ -34,12 +36,25 @@ module states {
             this.game.addChild(this.ocean);
 
             //title Label
-            this.mailPilotLabel = new objects.Label(320, 40, "Hex Runner!");
-            this.mailPilotLabel.font = "60px Garamond";
-            this.mailPilotLabel.regX = this.mailPilotLabel.getMeasuredWidth() * 0.5;
-            this.mailPilotLabel.regY = this.mailPilotLabel.getMeasuredLineHeight() * 0.5;
-            this.game.addChild(this.mailPilotLabel);
+            this.titleLabel = new objects.Label(320, 40, "Hex Runner!");
+            this.titleLabel.font = "60px Garamond";
+            this.titleLabel.regX = this.titleLabel.getMeasuredWidth() * 0.5;
+            this.titleLabel.regY = this.titleLabel.getMeasuredLineHeight() * 0.5;
+            this.game.addChild(this.titleLabel);
 
+            //instruction label
+            this.instLabel = new objects.Label(320, 90, "Use your mouse to survive! Collect points to win!!");
+            this.instLabel.font = "30px Garamond";
+            this.instLabel.regX = this.instLabel.getMeasuredWidth() * 0.5;
+            this.instLabel.regY = this.instLabel.getMeasuredLineHeight() * 0.5;
+            this.game.addChild(this.instLabel);
+
+            //choose label
+            this.chooseLabel = new objects.Label(320, 210, "Choose your difficulty!");
+            this.chooseLabel.font = "50px Garamond";
+            this.chooseLabel.regX = this.chooseLabel.getMeasuredWidth() * 0.5;
+            this.chooseLabel.regY = this.chooseLabel.getMeasuredLineHeight() * 0.5;
+            this.game.addChild(this.chooseLabel);
 
             //hard Button
             this.hardButton = new objects.Button(320, 280, "hardButton");

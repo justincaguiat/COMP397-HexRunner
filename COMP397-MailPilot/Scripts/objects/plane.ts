@@ -20,9 +20,9 @@ module objects {
         // PUBLIC METHODS
         public update() {
             this.y = stage.mouseY;
-            //this.x = stage.mouseX;
-
-            this.rotation += 10;
+            this.x = stage.mouseX;
+            
+            this.rotation += 20;
         }
 
     }

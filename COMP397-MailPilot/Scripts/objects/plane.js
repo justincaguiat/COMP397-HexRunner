@@ -22,8 +22,8 @@ var objects;
         // PUBLIC METHODS
         Plane.prototype.update = function () {
             this.y = stage.mouseY;
-            //this.x = stage.mouseX;
-            this.rotation += 10;
+            this.x = stage.mouseX;
+            this.rotation += 20;
         };
         return Plane;
     })(createjs.Bitmap);

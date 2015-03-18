@@ -70,6 +70,7 @@ module states {
             if (this.tryAgain) {
                 this.game.removeAllChildren();
                 stage.removeChild(this.game);
+                createjs.Sound.stop();
                 currentState = constants.MENU_STATE;
                 stateChanged = true;
             }

@@ -6,6 +6,7 @@
         public active: boolean;
         private _scoreLabel: createjs.Text;
         private _livesLabel: createjs.Text;
+        private _impossibleLabel: objects.GameObject;
 
         // CONSTRUCTOR +++++++++++++++++++++++++++++++++++++++++
         constructor(game: createjs.Container) {
@@ -19,6 +20,15 @@
             this._scoreLabel = new createjs.Text("Score: ", "40px Garamond", "#D9801A");
             this._scoreLabel.x = 400;
             game.addChild(this._scoreLabel);
+
+            if (constants.IMPOSSIBLE) {
+                this._impossibleLabel = new objects.GameObject("impossible");
+                this._impossibleLabel.x = 250;
+                this._impossibleLabel.y = 30;
+                this._impossibleLabel.scaleX = 0.5;
+                this._impossibleLabel.scaleY = 0.5;
+                game.addChild(this._impossibleLabel);
+            }
 
         }
 

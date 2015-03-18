@@ -9,4 +9,5 @@
     export var LABEL_FONT = "40px Garamond";
     export var LABEL_COLOUR = "#D9801A";
     export var PLANE_LIVES = 3;
+    export var IMPOSSIBLE: boolean = false;
 } 

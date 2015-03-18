@@ -9,5 +9,6 @@ var constants;
     constants.LABEL_FONT = "40px Garamond";
     constants.LABEL_COLOUR = "#D9801A";
     constants.PLANE_LIVES = 3;
+    constants.IMPOSSIBLE = false;
 })(constants || (constants = {}));
 //# sourceMappingURL=constants.js.map

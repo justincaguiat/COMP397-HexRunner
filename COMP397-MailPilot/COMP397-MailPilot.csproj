@@ -67,9 +67,11 @@
     <Content Include="assets\images\easyButton.png" />
     <Content Include="assets\images\enemy1.png" />
     <Content Include="assets\images\enemy2.png" />
+    <Content Include="assets\images\GameLogo.png" />
     <Content Include="assets\images\ground.png" />
     <Content Include="assets\images\hardButton.png" />
     <Content Include="assets\images\hexagon.png" />
+    <Content Include="assets\images\impossible.png" />
     <Content Include="assets\images\points.png" />
     <Content Include="assets\images\tryAgain.png" />
     <Content Include="packages.config" />

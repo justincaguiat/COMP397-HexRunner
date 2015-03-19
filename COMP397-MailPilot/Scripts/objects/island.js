@@ -7,35 +7,35 @@ var __extends = this.__extends || function (d, b) {
 var objects;
 (function (objects) {
     // ISLAND CLASS
-    var Island = (function (_super) {
-        __extends(Island, _super);
+    var Points = (function (_super) {
+        __extends(Points, _super);
         // CONSTRUCTOR
-        function Island() {
+        function Points() {
             _super.call(this, "island");
             this.sound = "yay";
             this._dy = 5;
             this.reset();
         }
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++
-        Island.prototype.update = function () {
+        Points.prototype.update = function () {
             this.x -= this._dy;
             this._checkBounds();
         };
         // Reset position of island to the top
-        Island.prototype.reset = function () {
+        Points.prototype.reset = function () {
             this.y = Math.floor(Math.random() * 480);
             ;
             this.x = 690;
         };
         // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++
-        Island.prototype._checkBounds = function () {
+        Points.prototype._checkBounds = function () {
             // check if island has left the bottom of the screen
             if (this.x < 0) {
                 this.reset();
             }
         };
-        return Island;
+        return Points;
     })(objects.GameObject);
-    objects.Island = Island;
+    objects.Points = Points;
 })(objects || (objects = {}));
 //# sourceMappingURL=island.js.map

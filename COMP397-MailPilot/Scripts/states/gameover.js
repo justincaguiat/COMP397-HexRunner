@@ -1,9 +1,9 @@
 /// <reference path="../constants.ts" />
 /// <reference path="../objects/gameobject.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/ocean.ts" />
-/// <reference path="../objects/plane.ts" />
-/// <reference path="../objects/cloud.ts" />
+/// <reference path="../objects/points.ts" />
+/// <reference path="../objects/ground.ts" />
+/// <reference path="../objects/hexagon.ts" />
+/// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/scoreboard.ts" />
@@ -17,7 +17,7 @@ var states;
             // Instantiate Game Container
             this.game = new createjs.Container();
             //Ocean object
-            this.ocean = new objects.Ocean();
+            this.ocean = new objects.Ground();
             this.game.addChild(this.ocean);
             //gameover sound
             createjs.Sound.play("gameover");

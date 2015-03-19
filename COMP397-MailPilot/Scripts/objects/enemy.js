@@ -31,7 +31,7 @@ var objects;
             this.x = 690;
             this._dy = Math.floor(Math.random() * 10) - 5;
             this._dx = Math.floor(Math.random() * 5) + 5;
-            this._scale = (Math.random() * 1.3) + 1;
+            this._scale = (Math.random() * 1.2) + 1;
         };
         // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++
         Enemy.prototype._checkBounds = function () {
@@ -44,4 +44,4 @@ var objects;
     })(objects.GameObject);
     objects.Enemy = Enemy;
 })(objects || (objects = {}));
-//# sourceMappingURL=cloud.js.map
+//# sourceMappingURL=enemy.js.map

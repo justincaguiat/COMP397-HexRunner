@@ -6,42 +6,36 @@ var __extends = this.__extends || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // CLOUD CLASS
-    var Enemy = (function (_super) {
-        __extends(Enemy, _super);
+    // ISLAND CLASS
+    var Points = (function (_super) {
+        __extends(Points, _super);
         // CONSTRUCTOR
-        function Enemy() {
-            _super.call(this, "cloud");
-            this.sound = "thunder";
+        function Points() {
+            _super.call(this, "island");
+            this.sound = "yay";
+            this._dy = 5;
             this.reset();
         }
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++
-        Enemy.prototype.update = function () {
-            this.y += this._dy;
-            this.x -= this._dx;
-            this.rotation += this._dx;
-            this.scaleX = this._scale;
-            this.scaleY = this._scale;
+        Points.prototype.update = function () {
+            this.x -= this._dy;
             this._checkBounds();
         };
         // Reset position of island to the top
-        Enemy.prototype.reset = function () {
+        Points.prototype.reset = function () {
             this.y = Math.floor(Math.random() * 480);
             ;
             this.x = 690;
-            this._dy = Math.floor(Math.random() * 10) - 5;
-            this._dx = Math.floor(Math.random() * 5) + 5;
-            this._scale = (Math.random() * 1.3) + 1;
         };
         // PRIVATE METHODS +++++++++++++++++++++++++++++++++++++++++
-        Enemy.prototype._checkBounds = function () {
+        Points.prototype._checkBounds = function () {
             // check if island has left the bottom of the screen
             if (this.x < 0) {
                 this.reset();
             }
         };
-        return Enemy;
+        return Points;
     })(objects.GameObject);
-    objects.Enemy = Enemy;
+    objects.Points = Points;
 })(objects || (objects = {}));
-//# sourceMappingURL=cloud.js.map
+//# sourceMappingURL=points.js.map

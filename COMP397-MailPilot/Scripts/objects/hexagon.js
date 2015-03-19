@@ -23,10 +23,9 @@ var objects;
         Hexagon.prototype.update = function () {
             this.y = stage.mouseY;
             this.x = stage.mouseX;
-            this.rotation += 20;
         };
         return Hexagon;
     })(createjs.Bitmap);
     objects.Hexagon = Hexagon;
 })(objects || (objects = {}));
-//# sourceMappingURL=plane.js.map
+//# sourceMappingURL=hexagon.js.map

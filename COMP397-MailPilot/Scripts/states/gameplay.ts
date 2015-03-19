@@ -1,9 +1,9 @@
 ﻿/// <reference path="../constants.ts" />
 /// <reference path="../objects/gameobject.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/ocean.ts" />
-/// <reference path="../objects/plane.ts" />
-/// <reference path="../objects/cloud.ts" />
+/// <reference path="../objects/points.ts" />
+/// <reference path="../objects/ground.ts" />
+/// <reference path="../objects/hexagon.ts" />
+/// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../objects/label.ts" />
 
@@ -13,33 +13,33 @@ module states {
         // Game Objects 
         public game: createjs.Container;
         public scoreboard: objects.ScoreBoard;
-        public plane: objects.Plane;
-        public island: objects.Island
-        public clouds: objects.Cloud[] = [];
-        public ocean: objects.Ocean;
+        public hexagon: objects.Hexagon;
+        public points: objects.Points
+        public enemies: objects.Enemy[] = [];
+        public ground: objects.Ground;
 
         constructor() {
             // Instantiate Game Container
             this.game = new createjs.Container();
 
 
-            //Ocean object
-            this.ocean = new objects.Ocean();
-            this.game.addChild(this.ocean);
+            //Ground object
+            this.ground = new objects.Ground();
+            this.game.addChild(this.ground);
 
             //Island object
-            this.island = new objects.Island();
-            this.game.addChild(this.island);
+            this.points = new objects.Points();
+            this.game.addChild(this.points);
 
 
-            //Plane object
-            this.plane = new objects.Plane();
-            this.game.addChild(this.plane);
+            //Hexagon object
+            this.hexagon = new objects.Hexagon();
+            this.game.addChild(this.hexagon);
 
-            //Cloud object
+            //Enemy object
             for (var cloud = constants.CLOUD_NUM; cloud >= 0; cloud--) {
-                this.clouds[cloud] = new objects.Cloud();
-                this.game.addChild(this.clouds[cloud]);
+                this.enemies[cloud] = new objects.Enemy();
+                this.game.addChild(this.enemies[cloud]);
             }
 
 
@@ -59,19 +59,23 @@ module states {
         // CHECK COLLISION METHOD
         public checkCollision(collider: objects.GameObject) {
             if (this.scoreboard.active) {
-                var planePosition: createjs.Point = new createjs.Point(this.plane.x, this.plane.y);
+                var planePosition: createjs.Point = new createjs.Point(this.hexagon.x, this.hexagon.y);
             var objectPosition: createjs.Point = new createjs.Point(collider.x, collider.y);
             var theDistance = this.distance(planePosition, objectPosition);
-            if (theDistance < ((this.plane.height * 0.5) + (collider.height * 0.5))) {
+            if (theDistance < ((this.hexagon.height * 0.5) + (collider.height * 0.5))) {
                 if (collider.isColliding != true) {
-                    createjs.Sound.play(collider.sound);  
-                    if (collider.name == "cloud") {
-                        this.scoreboard.lives--;
+                    if (!constants.HIT) {
+                        if (collider.name == "cloud") {
+                            createjs.Sound.play(collider.sound);
+                            constants.HIT = true;
+                            this.scoreboard.lives--;
+                            //function for hit cooldown.
+                            this.delayTimer(this.isHit);
                         }
-
-
+                    }
                     if (collider.name == "island") {
-                        this.island.reset();
+                        createjs.Sound.play(collider.sound);
+                        this.points.reset();
                         this.scoreboard.score += 100;
                     }
                 }
@@ -80,22 +84,31 @@ module states {
                 collider.isColliding = false;
             }
         }
-    } // checkCollision Method
+        } // checkCollision Method
 
+        //sets constant to false, allowong player to be hit again
+        public isHit() {
+            return constants.HIT = false;
+        }
+        //timer to delay the function call
+        public delayTimer(functiontoDelay) {
+            return window.setTimeout(functiontoDelay, 2000);
+        }
+        
         public update() {
 
-            this.ocean.update();
+            this.ground.update();
 
-            this.island.update();
+            this.points.update();
 
-            this.plane.update();
+            this.hexagon.update();
 
             for (var cloud = constants.CLOUD_NUM; cloud >= 0; cloud--) {
-                this.clouds[cloud].update();
-                this.checkCollision(this.clouds[cloud]);
+                this.enemies[cloud].update();
+                this.checkCollision(this.enemies[cloud]);
             }
 
-            this.checkCollision(this.island);
+            this.checkCollision(this.points);
 
 
             this.scoreboard.update();

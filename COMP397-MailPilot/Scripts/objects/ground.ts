@@ -1,6 +1,6 @@
 ﻿module objects {
     // OCEAN CLASS
-    export class Ocean extends createjs.Bitmap {
+    export class Ground extends createjs.Bitmap {
         // PUBLIC INSTANCE VARIABLES
         private _dy: number = 5;
 

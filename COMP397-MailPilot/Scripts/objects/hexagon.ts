@@ -1,7 +1,7 @@
 ﻿
 module objects {
     // PLANE CLASS
-    export class Plane extends createjs.Bitmap {
+    export class Hexagon extends createjs.Bitmap {
         public width: number;
         public height: number;
         // CONSTRUCTOR
@@ -21,8 +21,8 @@ module objects {
         public update() {
             this.y = stage.mouseY;
             this.x = stage.mouseX;
-            
-            this.rotation += 20;
+          
+
         }
 
     }
